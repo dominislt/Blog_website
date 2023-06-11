@@ -18,9 +18,9 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 gravatar = Gravatar(app, size=100, rating='g', default='retro', force_default=False, force_lower=False, use_ssl=False,
                     base_url=None)
-
+DB_URL = "postgres://blog_db_r721_user:6SHrCYlZvY9lSPBgKaHQIwlVkbRsYyaa@dpg-ci2sjbu7avj2t35lhki0-a/blog_db_r721"
 ##CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = DB_URL, 'sqlite:///blog.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
